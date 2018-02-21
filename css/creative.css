@@ -40,6 +40,8 @@ h6 {
 
 .bg-primary {
   background-color: #FDE3A7 !important;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .bg-dark {
@@ -245,11 +247,15 @@ header.masthead p {
 
 #especialidades{
   padding-top: 60px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 #contato{
   padding-top: 75px;
   padding-bottom: 65px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .service-box {
