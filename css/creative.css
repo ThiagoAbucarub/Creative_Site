@@ -251,6 +251,13 @@ header.masthead p {
   padding-right: 0px;
 }
 
+#galeria{
+  padding-top: 25px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+
 #contato{
   padding-top: 75px;
   padding-bottom: 65px;
@@ -366,4 +373,17 @@ header.masthead p {
 
 .btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+}
+
+.warning {
+  margin: 10px auto 0;
+  width: 500px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
