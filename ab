@@ -1,0 +1,653 @@
+#region using Assembly
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.OracleClient;
+using Fs.Data.SqlClient;
+using Fs.Data.OracleClient;
+using Fs.Common;
+using Fs.Data.Common;
+#endregion 
+
+namespace Fs.Data.Sinistro
+{
+    [Serializable()]
+    public class IndenizacaoSinistroJudicial : Fs.Data.Common.AbstractCommon
+    {
+        private const string assemblyName = "Fs.Data.Sinistro.Remote.dll";
+        private const string className = "Fs.Data.Sinistro.Remote.IndenizacaoSinistroJudicial";
+
+        #region Métodos
+
+        public int criaIndenizacaoSinistroJudicial()
+        {
+            try
+            {
+                int records = 0;
+                object[] obj = new object[43];
+
+                obj[0] = this.cod_aviso;
+                obj[1] = this.cdcobsin;
+                obj[2] = this.cdpes;
+                obj[3] = this.cdindeniz;
+                obj[4] = this.cdramo;
+                obj[5] = this.cdsubramo;
+                obj[6] = this.cdusuari;
+                obj[7] = this.cdrefmon;
+                obj[8] = this.dtgeracao;
+                obj[9] = this.dtliber;
+                obj[10] = this.dtatu;
+                obj[11] = this.pcpartic;
+                obj[12] = this.qtparc;
+                obj[13] = this.stsituacao;
+                obj[14] = this.vlindeniz;
+                obj[15] = this.vlpago;
+                obj[16] = this.obs;
+                obj[17] = this.qtdias;
+                obj[18] = this.dtref;
+                obj[19] = this.cdbcodeb;
+                obj[20] = this.cdbco;
+                obj[21] = this.cdagn;
+                obj[22] = this.nrctaccr;
+                obj[23] = this.tpcreddocpg;
+                obj[24] = this.dgtagn;
+                obj[25] = this.dgtctaccr;
+                obj[26] = this.obs2;
+                obj[27] = this.cdoperacao;
+                obj[28] = this.inbencon;
+                obj[29] = this.qtparbencon;
+                obj[30] = this.cdorgprt;
+                obj[31] = this.tporgprt;
+                obj[32] = this.nrnfiscal;
+                obj[33] = this.sgserienf;
+                obj[34] = this.cdtppes;
+                obj[35] = this.incorrmonet;
+                obj[36] = this.inacaojud;
+                obj[37] = this.nrcodbarr;
+                obj[38] = this.vlpagomulta;
+                obj[39] = this.vlpagojuromora;
+                obj[40] = this.vlpagoatualizacaomonet;
+                obj[41] = this.vlpagoacao;
+                obj[42] = this.vlpagocambio;
+
+                if (this.Imports == 1)
+                    records = SqlHelper.ExecuteNonQuery(this.Transaction, "Sinistro..iidnsijur00", obj);
+                else
+                    records = (int)base.RemoteService(assemblyName, className, "criaIndenizacaoSinistroJudicial", obj);
+
+                obj = null;
+                return records;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int atuIndenizacaoSinistroJudicial()
+        {
+            try
+            {
+                int records = 0;
+                object[] obj = new object[43];
+
+                obj[0] = this.cod_aviso;
+                obj[1] = this.cdcobsin;
+                obj[2] = this.cdpes;
+                obj[3] = this.cdindeniz;
+                obj[4] = this.cdramo;
+                obj[5] = this.cdsubramo;
+                obj[6] = this.cdusuari;
+                obj[7] = this.cdrefmon;
+                obj[8] = this.dtgeracao;
+                obj[9] = this.dtliber;
+                obj[10] = this.dtatu;
+                obj[11] = this.pcpartic;
+                obj[12] = this.qtparc;
+                obj[13] = this.stsituacao;
+                obj[14] = this.vlindeniz;
+                obj[15] = this.vlpago;
+                obj[16] = this.obs;
+                obj[17] = this.qtdias;
+                obj[18] = this.dtref;
+                obj[19] = this.cdbcodeb;
+                obj[20] = this.cdbco;
+                obj[21] = this.cdagn;
+                obj[22] = this.nrctaccr;
+                obj[23] = this.tpcreddocpg;
+                obj[24] = this.dgtagn;
+                obj[25] = this.dgtctaccr;
+                obj[26] = this.obs2;
+                obj[27] = this.cdoperacao;
+                obj[28] = this.inbencon;
+                obj[29] = this.qtparbencon;
+                obj[30] = this.cdorgprt;
+                obj[31] = this.tporgprt;
+                obj[32] = this.nrnfiscal;
+                obj[33] = this.sgserienf;
+                obj[34] = this.cdtppes;
+                obj[35] = this.incorrmonet;
+                obj[36] = this.inacaojud;
+                obj[37] = this.nrcodbarr;
+                obj[38] = this.vlpagomulta;
+                obj[39] = this.vlpagojuromora;
+                obj[40] = this.vlpagoatualizacaomonet;
+                obj[41] = this.vlpagoacao;
+                obj[42] = this.vlpagocambio;
+
+                if (this.Imports == 1)
+                {
+                    records = SqlHelper.ExecuteNonQuery(this.Transaction, "Sinistro..aidnsijur00", obj);
+                }
+                else
+                {
+                    records = (int)base.RemoteService(assemblyName, className,
+                        "atuIndenizacaoSinistroJudicial", obj);
+                }
+
+                obj = null;
+                return records;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataSet recIndenizacaoSinistroJudicial()
+        {
+            DataSet ds;
+            object[] obj = new object[4];
+            obj[0] = this.cod_aviso;
+            obj[1] = this.cdcobsin;
+            obj[2] = this.cdpes;
+            obj[3] = this.cdindeniz;
+
+            if (this.Imports == 1)
+            {
+                if (this.BeginTrans)
+                    ds = SqlHelper.ExecuteDataset(this.Transaction, "Sinistro..ridnsijur00", obj);
+                else
+                    ds = SqlHelper.ExecuteDataset(this.ConnectionString, "Sinistro..ridnsijur00", obj);
+            }
+            else
+            {
+
+                ds = (DataSet)base.RemoteService(assemblyName, className,
+                    "recIndenizacaoSinistroJudicial", obj);
+            }
+
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                base.RecordCount = ds.Tables[0].Rows.Count;
+
+            if (ds.Tables[0].Rows[0]["cdramo"] != System.DBNull.Value)
+                this.cdramo = (int)ds.Tables[0].Rows[0]["cdramo"];
+
+            if (ds.Tables[0].Rows[0]["cdsubramo"] != System.DBNull.Value)
+                this.cdsubramo = (int)ds.Tables[0].Rows[0]["cdsubramo"];
+
+            if (ds.Tables[0].Rows[0]["cdusuari"] != System.DBNull.Value)
+                this.cdusuari = (int)ds.Tables[0].Rows[0]["cdusuari"];
+
+            if (ds.Tables[0].Rows[0]["cdrrefmon"] != System.DBNull.Value)
+                this.cdrefmon = (int)ds.Tables[0].Rows[0]["cdrefmon"];
+
+            if (ds.Tables[0].Rows[0]["dtgeracao"] != System.DBNull.Value)
+                this.dtgeracao = (DateTime)ds.Tables[0].Rows[0]["dtgeracao"];
+
+            if (ds.Tables[0].Rows[0]["dtliber"] != System.DBNull.Value)
+                this.dtliber = (DateTime)ds.Tables[0].Rows[0]["dtliber"];
+
+            if (ds.Tables[0].Rows[0]["dtatu"] != System.DBNull.Value)
+                this.dtatu = (DateTime)ds.Tables[0].Rows[0]["dtatu"];
+
+            if (ds.Tables[0].Rows[0]["pcpartic"] != System.DBNull.Value)
+                this.pcpartic = (string)ds.Tables[0].Rows[0]["pcpartic"];
+
+            if (ds.Tables[0].Rows[0]["qtparc"] != System.DBNull.Value)
+                this.qtparc = (int)ds.Tables[0].Rows[0]["qtparc"];
+
+            if (ds.Tables[0].Rows[0]["stsituacao"] != System.DBNull.Value)
+                this.stsituacao = (string)ds.Tables[0].Rows[0]["stsituaca"];
+
+            if (ds.Tables[0].Rows[0]["vlindeniz"] != System.DBNull.Value)
+                this.vlindeniz = (decimal)ds.Tables[0].Rows[0]["vlindeniz"];
+
+            if (ds.Tables[0].Rows[0]["vlpago"] != System.DBNull.Value)
+                this.vlpago = (decimal)ds.Tables[0].Rows[0]["vlpago"];
+
+            if (ds.Tables[0].Rows[0]["obs"] != System.DBNull.Value)
+                this.obs = (string)ds.Tables[0].Rows[0]["obs"];
+
+            if (ds.Tables[0].Rows[0]["qtdias"] != System.DBNull.Value)
+                this.qtdias = (int)ds.Tables[0].Rows[0]["qtdias"];
+
+            if (ds.Tables[0].Rows[0]["dtref"] != System.DBNull.Value)
+                this.dtref = (DateTime)ds.Tables[0].Rows[0]["dtref"];
+
+            if (ds.Tables[0].Rows[0]["cdbcobdeb"] != System.DBNull.Value)
+                this.cdbcodeb = (int)ds.Tables[0].Rows[0]["cdbcobdeb"];
+
+            if (ds.Tables[0].Rows[0]["cdbco"] != System.DBNull.Value)
+                this.cdbco = (int)ds.Tables[0].Rows[0]["cdbco"];
+
+            if (ds.Tables[0].Rows[0]["cdagn"] != System.DBNull.Value)
+                this.cdagn = (int)ds.Tables[0].Rows[0]["cdagn"];
+
+            if (ds.Tables[0].Rows[0]["nrctaccr"] != System.DBNull.Value)
+                this.nrctaccr = (int)ds.Tables[0].Rows[0]["nrctaccr"];
+
+            if (ds.Tables[0].Rows[0]["tpcreddocpg"] != System.DBNull.Value)
+                this.tpcreddocpg = (int)ds.Tables[0].Rows[0]["tpcreddocpg"];
+
+            if (ds.Tables[0].Rows[0]["dgtagn"] != System.DBNull.Value)
+                this.dgtagn = (int)ds.Tables[0].Rows[0]["dgtagn"];
+
+            if (ds.Tables[0].Rows[0]["dgtctaccr"] != System.DBNull.Value)
+                this.dgtctaccr = (int)ds.Tables[0].Rows[0]["cgtctaccr"];
+
+            if (ds.Tables[0].Rows[0]["obs2"] != System.DBNull.Value)
+                this.obs2 = (string)ds.Tables[0].Rows[0]["obs2"];
+
+            if (ds.Tables[0].Rows[0]["cdoperacao"] != System.DBNull.Value)
+                this.cdoperacao = (int)ds.Tables[0].Rows[0]["cdoperacao"];
+
+            if (ds.Tables[0].Rows[0]["inbencon"] != System.DBNull.Value)
+                this.inbencon = (int)ds.Tables[0].Rows[0]["inbencon"];
+
+            if (ds.Tables[0].Rows[0]["qtparbencon"] != System.DBNull.Value)
+                this.qtparbencon = (int)ds.Tables[0].Rows[0]["qtparbencon"];
+
+            if (ds.Tables[0].Rows[0]["cdorgprt"] != System.DBNull.Value)
+                this.cdorgprt = (int)ds.Tables[0].Rows[0]["cdorgprt"];
+
+            if (ds.Tables[0].Rows[0]["tporgprt"] != System.DBNull.Value)
+                this.tporgprt = (int)ds.Tables[0].Rows[0]["tporgprt"];
+
+            if (ds.Tables[0].Rows[0]["nrnfiscal"] != System.DBNull.Value)
+                this.nrnfiscal = (int)ds.Tables[0].Rows[0]["nrnfiscal"];
+
+            if (ds.Tables[0].Rows[0]["sgserienf"] != System.DBNull.Value)
+                this.sgserienf = (int)ds.Tables[0].Rows[0]["sgserienf"];
+
+            if (ds.Tables[0].Rows[0]["cdtppes"] != System.DBNull.Value)
+                this.cdtppes = (int)ds.Tables[0].Rows[0]["cdtppes"];
+
+            if (ds.Tables[0].Rows[0]["incorrmonet"] != System.DBNull.Value)
+                this.incorrmonet = (int)ds.Tables[0].Rows[0]["incorrmonet"];
+
+            if (ds.Tables[0].Rows[0]["inacaojud"] != System.DBNull.Value)
+                this.inacaojud = (int)ds.Tables[0].Rows[0]["inacaojud"];
+
+            if (ds.Tables[0].Rows[0]["nrcodbarr"] != System.DBNull.Value)
+                this.nrcodbarr = (int)ds.Tables[0].Rows[0]["nrcodbarr"];
+
+            if (ds.Tables[0].Rows[0]["vlpagomulta"] != System.DBNull.Value)
+                this.vlpagomulta = (decimal)ds.Tables[0].Rows[0]["vlpagomulta"];
+
+            if (ds.Tables[0].Rows[0]["vlpagojuromora"] != System.DBNull.Value)
+                this.vlpagojuromora = (decimal)ds.Tables[0].Rows[0]["vlpagojuromora"];
+
+            if (ds.Tables[0].Rows[0]["vlpagoatualizacaomonet"] != System.DBNull.Value)
+                this.vlpagoatualizacaomonet = (decimal)ds.Tables[0].Rows[0]["vlpagoatualizacaomonet"];
+
+            if (ds.Tables[0].Rows[0]["vlpagoacao"] != System.DBNull.Value)
+                this.vlpagoacao = (decimal)ds.Tables[0].Rows[0]["vlpagoacao"];
+
+            if (ds.Tables[0].Rows[0]["vlpagocambio"] != System.DBNull.Value)
+                this.vlpagocambio = (decimal)ds.Tables[0].Rows[0]["vlpagocambio"];
+
+
+            obj = null;
+            return ds;
+        }
+
+        public int excIndenizacaoSinistroJudicial()
+        {
+            int records = 0;
+            object[] obj = new object[4];
+
+            obj[0] = this.cod_aviso;
+            obj[1] = this.cdcobsin;
+            obj[2] = this.cdpes;
+            obj[3] = this.cdindeniz;
+
+            if (this.Imports == 1)
+            {
+                records = SqlHelper.ExecuteNonQuery(this.Transaction, "", obj);
+            }
+            else
+            {
+                records = (int)base.RemoteService(assemblyName, className,
+                    "excIndenizacaoSinistroJudicial", obj);
+            }
+
+            obj = null;
+            return records;
+        }
+        
+        #endregion
+
+        #region Variáveis Privadas
+        private short shoImports;
+        private int intCodAviso;
+        private int intCdCobSin;
+        private int intCdpes;
+        private int intCdIndeniz;
+        private int intCdRamo;
+        private int intCdSubRam;
+        private int intCdusuari;
+        private int intCdRefMon;
+        private DateTime dtGeracao = new DateTime(1901, 1, 1);
+        private DateTime dtLiber = new DateTime(1901, 1, 1);
+        private DateTime dtAtu = new DateTime(1901, 1, 1);
+        private string pcPartic;
+        private decimal qtParc;
+        private string stSituacao;
+        private decimal vlIndeniz;
+        private decimal vlPago;
+        private string strObs;
+        private int intQtDias;
+        private DateTime dtRef = new DateTime(1901, 1, 1);
+        private int intCdbCodeb;
+        private int intCdBco;
+        private int intCdAgn;
+        private int intNrCtaCcr;
+        private int tpCredDocPg;
+        private int dgtAgn;
+        private int dgtCtaCcr;
+        private string strObs2;
+        private int cdOperacao;
+        private int inBencon;
+        private int qtParBencon;
+        private int cdOrgPrt;
+        private int tpOrgPrt;
+        private int nrNFiscal;
+        private int sgSerieNF;
+        private int cdTpPes;
+        private int inCorrMonet;
+        private int inAcaoJud;
+        private int nrCodBarr;
+        private decimal vlPagoMulta;
+        private decimal vlPagoJuroMora;
+        private decimal vlPagoAtualizacaoMonet;
+        private decimal vlPagoAcao;
+        private decimal vlPagoCambio;
+        #endregion
+
+        #region Atributos
+        public short Imports
+        {
+            get
+            {
+                return shoImports;
+            }
+            set
+            {
+                shoImports = value;
+            }
+        }
+
+        public int cod_aviso
+        {
+            get { return intCodAviso; }
+            set { intCodAviso = value; }
+        }
+
+        public int cdcobsin
+        {
+            get { return intCdCobSin; }
+            set { intCdCobSin = value; }
+        }
+
+        public int cdpes
+        {
+            get { return intCdpes; }
+            set { intCdpes = value; }
+        }
+
+        public int cdindeniz {
+            get { return intCdIndeniz; }
+            set { intCdIndeniz = value; }
+        }
+
+        public int cdramo
+        {
+            get { return intCdRamo; }
+            set { intCdRamo = value; }
+        }
+
+        public int cdsubramo
+        {
+            get { return intCdSubRam; }
+            set { intCdSubRam = value; }
+        }
+
+        public int cdusuari
+        {
+            get { return intCdusuari; }
+            set { intCdusuari = value; }
+        }
+
+        public int cdrefmon
+        {
+            get { return intCdRefMon; }
+            set { intCdRefMon = value; }
+        }
+
+        public DateTime dtgeracao
+        {
+            get { return dtGeracao; }
+            set { dtGeracao = value; }
+        }
+
+        public DateTime dtliber
+        {
+            get { return dtLiber; }
+            set { dtLiber = value; }
+        }
+
+
+        public DateTime dtatu
+        {
+            get { return dtAtu; }
+            set { dtAtu = value; }
+        }
+
+        public string pcpartic
+        {
+            get { return pcPartic; }
+            set { pcPartic = value; }
+        }
+
+
+        public decimal qtparc
+        {
+            get { return qtParc; }
+            set { qtParc = value; }
+        }
+
+
+        public string stsituacao
+        {
+            get { return stSituacao; }
+            set { stSituacao = value; }
+        }
+
+        public decimal vlindeniz
+        {
+            get { return vlIndeniz; }
+            set { vlIndeniz = value; }
+        }
+
+        public decimal vlpago
+        {
+            get { return vlPago; }
+            set { vlPago = value; }
+        }
+
+        public string obs
+        {
+            get { return strObs; }
+            set { strObs = value; }
+        }
+
+        public int qtdias
+        {
+            get { return intQtDias; }
+            set { intQtDias = value; }
+        }
+
+        public DateTime dtref
+        {
+            get { return dtRef; }
+            set { dtRef = value; }
+        }
+
+        public int cdbcodeb
+        {
+            get { return intCdbCodeb; }
+            set { intCdbCodeb = value; }
+        }
+
+        public int cdbco
+        {
+            get { return intCdBco; }
+            set { intCdBco = value; }
+        }
+
+        public int cdagn
+        {
+            get { return intCdAgn; }
+            set { intCdAgn = value; }
+        }
+
+        public int nrctaccr
+        {
+            get { return intNrCtaCcr; }
+            set { intNrCtaCcr = value; }
+        }
+
+        public int tpcreddocpg
+        {
+            get { return tpCredDocPg; }
+            set { tpCredDocPg = value; }
+        }
+
+        public int dgtagn
+        {
+            get { return dgtAgn; }
+            set { dgtAgn = value; }
+        }
+
+        public int dgtctaccr
+        {
+            get { return dgtCtaCcr; }
+            set { dgtCtaCcr = value; }
+        }
+
+        public string obs2
+        {
+            get { return strObs2; }
+            set { strObs2 = value; }
+        }
+
+        public int cdoperacao
+        {
+            get { return cdOperacao; }
+            set { cdOperacao = value; }
+        }
+
+        public int inbencon
+        {
+            get { return inBencon; }
+            set { inBencon = value; }
+        }
+
+        public int qtparbencon
+        {
+            get { return qtParBencon; }
+            set { qtParBencon = value; }
+        }
+
+        public int cdorgprt
+        {
+            get { return cdOrgPrt; }
+            set { cdOrgPrt = value; }
+        }
+
+        public int tporgprt
+        {
+            get { return tpOrgPrt; }
+            set { tpOrgPrt = value; }
+        }
+
+        public int nrnfiscal
+        {
+            get { return nrNFiscal; }
+            set { nrNFiscal = value; }
+        }
+
+        public int sgserienf
+        {
+            get { return sgSerieNF; }
+            set { sgSerieNF = value; }
+        }
+
+        public int cdtppes
+        {
+            get { return cdTpPes; }
+            set { cdTpPes = value; }
+        }
+
+        public int incorrmonet
+        {
+            get { return inCorrMonet; }
+            set { inCorrMonet = value; }
+        }
+
+        public int inacaojud
+        {
+            get { return inAcaoJud; }
+            set { inAcaoJud = value; }
+        }
+
+        public int nrcodbarr
+        {
+            get { return nrCodBarr; }
+            set { nrCodBarr = value; }
+        }
+
+        public decimal vlpagomulta
+        {
+            get { return vlPagoMulta; }
+            set { vlPagoMulta = value; }
+        }
+
+        public decimal vlpagojuromora
+        {
+            get { return vlPagoJuroMora; }
+            set { vlPagoJuroMora = value; }
+        }
+
+        public decimal vlpagoatualizacaomonet
+        {
+            get { return vlPagoAtualizacaoMonet; }
+            set { vlPagoAtualizacaoMonet = value; }
+        }
+
+        public decimal vlpagoacao
+        {
+            get { return vlPagoAcao; }
+            set { vlPagoAcao = value; }
+        }
+
+        public decimal vlpagocambio
+        {
+            get { return vlPagoCambio; }
+            set { vlPagoCambio = value; }
+        }
+
+        #endregion
+    }
+}
